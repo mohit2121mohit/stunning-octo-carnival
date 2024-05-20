@@ -1,0 +1,1224 @@
+{% extends 'base.html' %}
+{% block title %}Heritage Trains{% endblock title %}
+{% block body %}
+    <div class="container my-4">
+        <br><br>
+    <h2><u><b>Heritage Trains</b></u></h2>
+        <br><br> <br><br>
+        <!DOCTYPE html>
+<html>
+<head>
+    <!-- Your head content here -->
+</head>
+<body>
+    
+
+<select id="trainSelect">
+    <option value="1" selected="">All Heritage Trains</option>
+    <option value="2">Kalka Shimla Railway</option>	
+    <option value="3">Matheran Hill Railway</option>	
+    <option value="4">Kangra Valley Railway</option>	
+    <option value="5">Nilgiri Mountain Railway</option>	
+    <option value="0">Darjeeling Himalayan Railway</option>
+    <!-- Other train options -->
+</select>
+
+<table id="dataTable">
+    <!-- Table headers here -->
+    <tbody id="tableBody">
+        
+        <!-- Table data will be added here -->
+    </tbody>
+</table>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const trainSelect = document.getElementById("trainSelect");
+    const tableBody = document.getElementById("tableBody");
+
+    const trainData = {
+        0: `
+<table class="table table-condensed " style="background: #eee;padding:;">
+            <thead>
+            <tr><td colspan="9" align="left"><font size="2" color="#006AD5" face="verdana">19 Heritage Trains of Darjeeling Himalayan Railway</font></td></tr>
+            </thead>
+                <tbody>
+                  
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52545</b>&nbsp;&nbsp;HIM KANYA</span><br><span style="padding-left: 10px;">Sat,Sun | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>08:30</b><br>DARJEELING<br><b>DJ</b></td>
+                               <td align="center" width="30%">--02:30 Hrs.--</td>
+                               <td align="right" width="35%"><b>11:00</b><br>KURSEONG<br><b>KGN</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52540</b>&nbsp;&nbsp;DJ - KGN - NJP PASSENGER</span><br><span style="padding-left: 10px;">Daily | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>09:00</b><br>DARJEELING<br><b>DJ</b></td>
+                               <td align="center" width="30%">--02:30 Hrs.--</td>
+                               <td align="right" width="35%"><b>11:30</b><br>KURSEONG<br>KGN
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52538</b>&nbsp;&nbsp;DJ-KGN-NJP AC PASSENGER</span><br><span style="padding-left: 10px;">Tue,Thu,Sun | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>09:10</b><br>DARJEELING<br><b>DJ</b></td>
+                               <td align="center" width="30%">--02:45 Hrs.--</td>
+                               <td align="right" width="35%"><b>11:55</b><br>KURSEONG<br>KGN
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52588</b>&nbsp;&nbsp;DJ - KGN PASSENGER</span><br><span style="padding-left: 10px;">Daily | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>16:10</b><br>DARJEELING<br><b>DJ</b></td>
+                               <td align="center" width="30%">--02:30 Hrs.--</td>
+                               <td align="right" width="35%"><b>18:40</b><br>KURSEONG<br><b>KGN</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52587</b>&nbsp;&nbsp;KGN - DJ PASSENGER</span><br><span style="padding-left: 10px;">Daily | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>06:30</b><br>KURSEONG<br><b>KGN</b></td>
+                               <td align="center" width="30%">--02:35 Hrs.--</td>
+                               <td align="right" width="35%"><b>09:05</b><br>DARJEELING<br><b>DJ</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52546</b>&nbsp;&nbsp;HIM KANYA</span><br><span style="padding-left: 10px;">Sat,Sun | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>13:15</b><br>KURSEONG<br><b>KGN</b></td>
+                               <td align="center" width="30%">--02:50 Hrs.--</td>
+                               <td align="right" width="35%"><b>16:05</b><br>DARJEELING<br><b>DJ</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52541</b>&nbsp;&nbsp;NJP-KGN-DJ PASSENGER</span><br><span style="padding-left: 10px;">Daily | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>14:45</b><br>KURSEONG<br>KGN</td>
+                               <td align="center" width="30%">--02:45 Hrs.--</td>
+                               <td align="right" width="35%"><b>17:30</b><br>DARJEELING<br><b>DJ</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52539</b>&nbsp;&nbsp;NJP-KGN-DJ AC PASSENGER</span><br><span style="padding-left: 10px;">Mon,Wed,Sat | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>15:30</b><br>KURSEONG<br>KGN</td>
+                               <td align="center" width="30%">--03:00 Hrs.--</td>
+                               <td align="right" width="35%"><b>18:30</b><br>DARJEELING<br><b>DJ</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52593</b>&nbsp;&nbsp;DJ - GHUM - DJ JOY RIDE</span><br><span style="padding-left: 10px;">Daily | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>10:30</b><br>GHUM<br>GHUM</td>
+                               <td align="center" width="30%">--00:40 Hrs.--</td>
+                               <td align="right" width="35%"><b>11:10</b><br>DARJEELING<br><b>DJ</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52594</b>&nbsp;&nbsp;DJ - GHUM - DJ JOY RIDE</span><br><span style="padding-left: 10px;">Daily | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>10:35</b><br>GHUM<br>GHUM</td>
+                               <td align="center" width="30%">--00:35 Hrs.--</td>
+                               <td align="right" width="35%"><b>11:10</b><br>DARJEELING<br><b>DJ</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52591</b>&nbsp;&nbsp;DJ - GHUM - DJ JOY RIDE</span><br><span style="padding-left: 10px;">Daily | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>10:40</b><br>GHUM<br>GHUM</td>
+                               <td align="center" width="30%">--00:35 Hrs.--</td>
+                               <td align="right" width="35%"><b>11:15</b><br>DARJEELING<br><b>DJ</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52596</b>&nbsp;&nbsp;DJ-GHUM-DJ JOY RIDE</span><br><span style="padding-left: 10px;">Daily | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>12:40</b><br>GHUM<br>GHUM</td>
+                               <td align="center" width="30%">--00:35 Hrs.--</td>
+                               <td align="right" width="35%"><b>13:15</b><br>DARJEELING<br><b>DJ</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52595</b>&nbsp;&nbsp;DJ-GHUM-DJ JOY RIDE</span><br><span style="padding-left: 10px;">Daily | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>12:45</b><br>GHUM<br>GHUM</td>
+                               <td align="center" width="30%">--00:40 Hrs.--</td>
+                               <td align="right" width="35%"><b>13:25</b><br>DARJEELING<br><b>DJ</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52597</b>&nbsp;&nbsp;DJ - GHUM - DJ JOY RIDE</span><br><span style="padding-left: 10px;">Daily | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>12:45</b><br>GHUM<br>GHUM</td>
+                               <td align="center" width="30%">--00:35 Hrs.--</td>
+                               <td align="right" width="35%"><b>13:20</b><br>DARJEELING<br><b>DJ</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52598</b>&nbsp;&nbsp;DJ-GHUM-DJ JOY RIDE</span><br><span style="padding-left: 10px;">Daily | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>14:40</b><br>GHUM<br>GHUM</td>
+                               <td align="center" width="30%">--00:35 Hrs.--</td>
+                               <td align="right" width="35%"><b>15:15</b><br>DARJEELING<br><b>DJ</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52599</b>&nbsp;&nbsp;DJ - GHUM - DJ JOY RIDE</span><br><span style="padding-left: 10px;">Daily | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>14:45</b><br>GHUM<br>GHUM</td>
+                               <td align="center" width="30%">--00:40 Hrs.--</td>
+                               <td align="right" width="35%"><b>15:25</b><br>DARJEELING<br><b>DJ</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52592</b>&nbsp;&nbsp;DJ - GHUM - DJ JOY RIDE</span><br><span style="padding-left: 10px;">Daily | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>15:15</b><br>GHUM<br>GHUM</td>
+                               <td align="center" width="30%">--00:40 Hrs.--</td>
+                               <td align="right" width="35%"><b>15:55</b><br>DARJEELING<br><b>DJ</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52544</b>&nbsp;&nbsp;DJ-GHUM-DJ JOY RIDE</span><br><span style="padding-left: 10px;">Daily | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>16:45</b><br>GHUM<br>GHUM</td>
+                               <td align="center" width="30%">--00:35 Hrs.--</td>
+                               <td align="right" width="35%"><b>17:20</b><br>DARJEELING<br><b>DJ</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52590</b>&nbsp;&nbsp;DJ-GHUM-DJ JOY RIDE</span><br><span style="padding-left: 10px;">Daily | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>16:50</b><br>GHUM<br>GHUM</td>
+                               <td align="center" width="30%">--00:35 Hrs.--</td>
+                               <td align="right" width="35%"><b>17:25</b><br>DARJEELING<br><b>DJ</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                
+                </tbody>
+            </table>
+        `,
+        1: `
+        <table class="table table-condensed " style="background: #eee;padding: 10dp;">
+            <thead>
+            <tr><td colspan="9" align="left"><font size="2" color="#006AD5" face="verdana">40 All Heritage Trains</font></td></tr>
+            </thead>
+                <tbody>
+                  
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>04543</b>&nbsp;&nbsp;KLK-SML MEX SPL</span><br><span style="padding-left: 10px;">Daily | Passenger Special</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>03:30</b><br>KALKA<br><b>KLK</b></td>
+                               <td align="center" width="30%">--05:20 Hrs.--</td>
+                               <td align="right" width="35%"><b>08:50</b><br>SHIMLA<br><b>SML</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>72451</b>&nbsp;&nbsp;KLK-SML MEX</span><br><span style="padding-left: 10px;">Daily | DMU</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>05:25</b><br>KALKA<br><b>KLK</b></td>
+                               <td align="center" width="30%">--04:00 Hrs.--</td>
+                               <td align="right" width="35%"><b>09:25</b><br>SHIMLA<br><b>SML</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52451</b>&nbsp;&nbsp;KLK-SML SHIVALIK DELUXE</span><br><span style="padding-left: 10px;">Daily | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>05:45</b><br>KALKA<br><b>KLK</b></td>
+                               <td align="center" width="30%">--05:05 Hrs.--</td>
+                               <td align="right" width="35%"><b>10:50</b><br>SHIMLA<br><b>SML</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52453</b>&nbsp;&nbsp;KLK-SML MAIL SPL</span><br><span style="padding-left: 10px;">Daily | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>06:20</b><br>KALKA<br><b>KLK</b></td>
+                               <td align="center" width="30%">--05:30 Hrs.--</td>
+                               <td align="right" width="35%"><b>11:50</b><br>SHIMLA<br><b>SML</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52459</b>&nbsp;&nbsp;KLK-SML EXP SPL</span><br><span style="padding-left: 10px;">Daily | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>07:00</b><br>KALKA<br><b>KLK</b></td>
+                               <td align="center" width="30%">--05:30 Hrs.--</td>
+                               <td align="right" width="35%"><b>12:30</b><br>SHIMLA<br><b>SML</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52455</b>&nbsp;&nbsp;KLK-SML EXP</span><br><span style="padding-left: 10px;">Daily | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>12:10</b><br>KALKA<br><b>KLK</b></td>
+                               <td align="center" width="30%">--05:10 Hrs.--</td>
+                               <td align="right" width="35%"><b>17:20</b><br>SHIMLA<br><b>SML</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52456</b>&nbsp;&nbsp;SML-KLK EXP</span><br><span style="padding-left: 10px;">Daily | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>10:55</b><br>SHIMLA<br><b>SML</b></td>
+                               <td align="center" width="30%">--05:40 Hrs.--</td>
+                               <td align="right" width="35%"><b>16:35</b><br>KALKA<br><b>KLK</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>72452</b>&nbsp;&nbsp;SML-KLK MEX</span><br><span style="padding-left: 10px;">Daily | DMU</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>12:00</b><br>SHIMLA<br><b>SML</b></td>
+                               <td align="center" width="30%">--05:00 Hrs.--</td>
+                               <td align="right" width="35%"><b>17:00</b><br>KALKA<br><b>KLK</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>04544</b>&nbsp;&nbsp;SML-KLK MEX SPL</span><br><span style="padding-left: 10px;">Daily | Passenger Special</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>14:15</b><br>SHIMLA<br><b>SML</b></td>
+                               <td align="center" width="30%">--05:55 Hrs.--</td>
+                               <td align="right" width="35%"><b>20:10</b><br>KALKA<br><b>KLK</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52460</b>&nbsp;&nbsp;SML-KLK MEX</span><br><span style="padding-left: 10px;">Daily | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>15:50</b><br>SHIMLA<br><b>SML</b></td>
+                               <td align="center" width="30%">--05:00 Hrs.--</td>
+                               <td align="right" width="35%"><b>20:50</b><br>KALKA<br><b>KLK</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52452</b>&nbsp;&nbsp;KLK-SML SHIVALIK DELUX</span><br><span style="padding-left: 10px;">Daily | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>18:05</b><br>SHIMLA<br><b>SML</b></td>
+                               <td align="center" width="30%">--04:35 Hrs.--</td>
+                               <td align="right" width="35%"><b>22:40</b><br>KALKA<br><b>KLK</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52454</b>&nbsp;&nbsp;SML-KLK MAIL</span><br><span style="padding-left: 10px;">Daily | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>18:45</b><br>SHIMLA<br><b>SML</b></td>
+                               <td align="center" width="30%">--05:00 Hrs.--</td>
+                               <td align="right" width="35%"><b>23:45</b><br>KALKA<br><b>KLK</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>01607</b>&nbsp;&nbsp;PTK-JDNX SPL</span><br><span style="padding-left: 10px;">Daily | Passenger Special</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>02:05</b><br>PATHANKOT<br><b>PTK</b></td>
+                               <td align="center" width="30%">--08:55 Hrs.--</td>
+                               <td align="right" width="35%"><b>11:00</b><br>JOGINDER NAGAR<br><b>JDNX</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>06136</b>&nbsp;&nbsp;MTP UAM PASS SPL</span><br><span style="padding-left: 10px;">Daily | Passenger Special</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>07:10</b><br>METUPALAIYAM<br><b>MTP</b></td>
+                               <td align="center" width="30%">--04:45 Hrs.--</td>
+                               <td align="right" width="35%"><b>11:55</b><br>UDAGAMANDALAM<br><b>UAM</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>06137</b>&nbsp;&nbsp;UAM MTP PASS SPL</span><br><span style="padding-left: 10px;">Daily | Passenger Special</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>14:00</b><br>UDAGAMANDALAM<br><b>UAM</b></td>
+                               <td align="center" width="30%">--03:30 Hrs.--</td>
+                               <td align="right" width="35%"><b>17:30</b><br>METUPALAIYAM<br><b>MTP</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>06141</b>&nbsp;&nbsp;ONR-UAM PASS SPL</span><br><span style="padding-left: 10px;">Daily | Passenger Special</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>07:45</b><br>COONOOR<br><b>ONR</b></td>
+                               <td align="center" width="30%">--01:15 Hrs.--</td>
+                               <td align="right" width="35%"><b>09:00</b><br>UDAGAMANDALAM<br><b>UAM</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>06143</b>&nbsp;&nbsp;ONR-UAM PASS SPL</span><br><span style="padding-left: 10px;">Daily | Passenger Special</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>12:35</b><br>COONOOR<br><b>ONR</b></td>
+                               <td align="center" width="30%">--01:10 Hrs.--</td>
+                               <td align="right" width="35%"><b>13:45</b><br>UDAGAMANDALAM<br><b>UAM</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>06138</b>&nbsp;&nbsp;ONR UAM PASS SPL</span><br><span style="padding-left: 10px;">Daily | Passenger Special</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>16:00</b><br>COONOOR<br><b>ONR</b></td>
+                               <td align="center" width="30%">--01:10 Hrs.--</td>
+                               <td align="right" width="35%"><b>17:10</b><br>UDAGAMANDALAM<br><b>UAM</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>06139</b>&nbsp;&nbsp;UAM ONR PASS SPL</span><br><span style="padding-left: 10px;">Daily | Passenger Special</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>09:15</b><br>UDAGAMANDALAM<br><b>UAM</b></td>
+                               <td align="center" width="30%">--01:05 Hrs.--</td>
+                               <td align="right" width="35%"><b>10:20</b><br>COONOOR<br><b>ONR</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>06142</b>&nbsp;&nbsp;UAM-ONR PASS  APL</span><br><span style="padding-left: 10px;">Daily | Passenger Special</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>12:15</b><br>UDAGAMANDALAM<br><b>UAM</b></td>
+                               <td align="center" width="30%">--01:00 Hrs.--</td>
+                               <td align="right" width="35%"><b>13:15</b><br>COONOOR<br><b>ONR</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>06140</b>&nbsp;&nbsp;UAM ONR PASS SPL</span><br><span style="padding-left: 10px;">Daily | Passenger Special</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>17:30</b><br>UDAGAMANDALAM<br><b>UAM</b></td>
+                               <td align="center" width="30%">--01:05 Hrs.--</td>
+                               <td align="right" width="35%"><b>18:35</b><br>COONOOR<br><b>ONR</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52545</b>&nbsp;&nbsp;HIM KANYA</span><br><span style="padding-left: 10px;">Sat,Sun | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>08:30</b><br>DARJEELING<br><b>DJ</b></td>
+                               <td align="center" width="30%">--02:30 Hrs.--</td>
+                               <td align="right" width="35%"><b>11:00</b><br>KURSEONG<br><b>KGN</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52540</b>&nbsp;&nbsp;DJ - KGN - NJP PASSENGER</span><br><span style="padding-left: 10px;">Daily | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>09:00</b><br>DARJEELING<br><b>DJ</b></td>
+                               <td align="center" width="30%">--02:30 Hrs.--</td>
+                               <td align="right" width="35%"><b>11:30</b><br>KURSEONG<br>KGN
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52538</b>&nbsp;&nbsp;DJ-KGN-NJP AC PASSENGER</span><br><span style="padding-left: 10px;">Tue,Thu,Sun | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>09:10</b><br>DARJEELING<br><b>DJ</b></td>
+                               <td align="center" width="30%">--02:45 Hrs.--</td>
+                               <td align="right" width="35%"><b>11:55</b><br>KURSEONG<br>KGN
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52588</b>&nbsp;&nbsp;DJ - KGN PASSENGER</span><br><span style="padding-left: 10px;">Daily | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>16:10</b><br>DARJEELING<br><b>DJ</b></td>
+                               <td align="center" width="30%">--02:30 Hrs.--</td>
+                               <td align="right" width="35%"><b>18:40</b><br>KURSEONG<br><b>KGN</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52587</b>&nbsp;&nbsp;KGN - DJ PASSENGER</span><br><span style="padding-left: 10px;">Daily | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>06:30</b><br>KURSEONG<br><b>KGN</b></td>
+                               <td align="center" width="30%">--02:35 Hrs.--</td>
+                               <td align="right" width="35%"><b>09:05</b><br>DARJEELING<br><b>DJ</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52546</b>&nbsp;&nbsp;HIM KANYA</span><br><span style="padding-left: 10px;">Sat,Sun | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>13:15</b><br>KURSEONG<br><b>KGN</b></td>
+                               <td align="center" width="30%">--02:50 Hrs.--</td>
+                               <td align="right" width="35%"><b>16:05</b><br>DARJEELING<br><b>DJ</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52541</b>&nbsp;&nbsp;NJP-KGN-DJ PASSENGER</span><br><span style="padding-left: 10px;">Daily | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>14:45</b><br>KURSEONG<br>KGN</td>
+                               <td align="center" width="30%">--02:45 Hrs.--</td>
+                               <td align="right" width="35%"><b>17:30</b><br>DARJEELING<br><b>DJ</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52539</b>&nbsp;&nbsp;NJP-KGN-DJ AC PASSENGER</span><br><span style="padding-left: 10px;">Mon,Wed,Sat | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>15:30</b><br>KURSEONG<br>KGN</td>
+                               <td align="center" width="30%">--03:00 Hrs.--</td>
+                               <td align="right" width="35%"><b>18:30</b><br>DARJEELING<br><b>DJ</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52593</b>&nbsp;&nbsp;DJ - GHUM - DJ JOY RIDE</span><br><span style="padding-left: 10px;">Daily | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>10:30</b><br>GHUM<br>GHUM</td>
+                               <td align="center" width="30%">--00:40 Hrs.--</td>
+                               <td align="right" width="35%"><b>11:10</b><br>DARJEELING<br><b>DJ</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52594</b>&nbsp;&nbsp;DJ - GHUM - DJ JOY RIDE</span><br><span style="padding-left: 10px;">Daily | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>10:35</b><br>GHUM<br>GHUM</td>
+                               <td align="center" width="30%">--00:35 Hrs.--</td>
+                               <td align="right" width="35%"><b>11:10</b><br>DARJEELING<br><b>DJ</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52591</b>&nbsp;&nbsp;DJ - GHUM - DJ JOY RIDE</span><br><span style="padding-left: 10px;">Daily | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>10:40</b><br>GHUM<br>GHUM</td>
+                               <td align="center" width="30%">--00:35 Hrs.--</td>
+                               <td align="right" width="35%"><b>11:15</b><br>DARJEELING<br><b>DJ</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52596</b>&nbsp;&nbsp;DJ-GHUM-DJ JOY RIDE</span><br><span style="padding-left: 10px;">Daily | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>12:40</b><br>GHUM<br>GHUM</td>
+                               <td align="center" width="30%">--00:35 Hrs.--</td>
+                               <td align="right" width="35%"><b>13:15</b><br>DARJEELING<br><b>DJ</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52595</b>&nbsp;&nbsp;DJ-GHUM-DJ JOY RIDE</span><br><span style="padding-left: 10px;">Daily | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>12:45</b><br>GHUM<br>GHUM</td>
+                               <td align="center" width="30%">--00:40 Hrs.--</td>
+                               <td align="right" width="35%"><b>13:25</b><br>DARJEELING<br><b>DJ</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52597</b>&nbsp;&nbsp;DJ - GHUM - DJ JOY RIDE</span><br><span style="padding-left: 10px;">Daily | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>12:45</b><br>GHUM<br>GHUM</td>
+                               <td align="center" width="30%">--00:35 Hrs.--</td>
+                               <td align="right" width="35%"><b>13:20</b><br>DARJEELING<br><b>DJ</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52598</b>&nbsp;&nbsp;DJ-GHUM-DJ JOY RIDE</span><br><span style="padding-left: 10px;">Daily | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>14:40</b><br>GHUM<br>GHUM</td>
+                               <td align="center" width="30%">--00:35 Hrs.--</td>
+                               <td align="right" width="35%"><b>15:15</b><br>DARJEELING<br><b>DJ</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52599</b>&nbsp;&nbsp;DJ - GHUM - DJ JOY RIDE</span><br><span style="padding-left: 10px;">Daily | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>14:45</b><br>GHUM<br>GHUM</td>
+                               <td align="center" width="30%">--00:40 Hrs.--</td>
+                               <td align="right" width="35%"><b>15:25</b><br>DARJEELING<br><b>DJ</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52592</b>&nbsp;&nbsp;DJ - GHUM - DJ JOY RIDE</span><br><span style="padding-left: 10px;">Daily | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>15:15</b><br>GHUM<br>GHUM</td>
+                               <td align="center" width="30%">--00:40 Hrs.--</td>
+                               <td align="right" width="35%"><b>15:55</b><br>DARJEELING<br><b>DJ</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52544</b>&nbsp;&nbsp;DJ-GHUM-DJ JOY RIDE</span><br><span style="padding-left: 10px;">Daily | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>16:45</b><br>GHUM<br>GHUM</td>
+                               <td align="center" width="30%">--00:35 Hrs.--</td>
+                               <td align="right" width="35%"><b>17:20</b><br>DARJEELING<br><b>DJ</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52590</b>&nbsp;&nbsp;DJ-GHUM-DJ JOY RIDE</span><br><span style="padding-left: 10px;">Daily | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>16:50</b><br>GHUM<br>GHUM</td>
+                               <td align="center" width="30%">--00:35 Hrs.--</td>
+                               <td align="right" width="35%"><b>17:25</b><br>DARJEELING<br><b>DJ</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                
+                </tbody>
+            </table>
+        `,
+        2: `            <table class="table table-condensed " style="background: #eee;padding: 10dp;">
+            <thead>
+            <tr><td colspan="9" align="left"><font size="2" color="#006AD5" face="verdana">12 Heritage Trains of Kalka Shimla Railway</font></td></tr>
+            </thead>
+                <tbody>
+                  
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>04543</b>&nbsp;&nbsp;KLK-SML MEX SPL</span><br><span style="padding-left: 10px;">Daily | Passenger Special</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>03:30</b><br>KALKA<br><b>KLK</b></td>
+                               <td align="center" width="30%">--05:20 Hrs.--</td>
+                               <td align="right" width="35%"><b>08:50</b><br>SHIMLA<br><b>SML</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>72451</b>&nbsp;&nbsp;KLK-SML MEX</span><br><span style="padding-left: 10px;">Daily | DMU</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>05:25</b><br>KALKA<br><b>KLK</b></td>
+                               <td align="center" width="30%">--04:00 Hrs.--</td>
+                               <td align="right" width="35%"><b>09:25</b><br>SHIMLA<br><b>SML</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52451</b>&nbsp;&nbsp;KLK-SML SHIVALIK DELUXE</span><br><span style="padding-left: 10px;">Daily | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>05:45</b><br>KALKA<br><b>KLK</b></td>
+                               <td align="center" width="30%">--05:05 Hrs.--</td>
+                               <td align="right" width="35%"><b>10:50</b><br>SHIMLA<br><b>SML</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52453</b>&nbsp;&nbsp;KLK-SML MAIL SPL</span><br><span style="padding-left: 10px;">Daily | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>06:20</b><br>KALKA<br><b>KLK</b></td>
+                               <td align="center" width="30%">--05:30 Hrs.--</td>
+                               <td align="right" width="35%"><b>11:50</b><br>SHIMLA<br><b>SML</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52459</b>&nbsp;&nbsp;KLK-SML EXP SPL</span><br><span style="padding-left: 10px;">Daily | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>07:00</b><br>KALKA<br><b>KLK</b></td>
+                               <td align="center" width="30%">--05:30 Hrs.--</td>
+                               <td align="right" width="35%"><b>12:30</b><br>SHIMLA<br><b>SML</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52455</b>&nbsp;&nbsp;KLK-SML EXP</span><br><span style="padding-left: 10px;">Daily | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>12:10</b><br>KALKA<br><b>KLK</b></td>
+                               <td align="center" width="30%">--05:10 Hrs.--</td>
+                               <td align="right" width="35%"><b>17:20</b><br>SHIMLA<br><b>SML</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52456</b>&nbsp;&nbsp;SML-KLK EXP</span><br><span style="padding-left: 10px;">Daily | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>10:55</b><br>SHIMLA<br><b>SML</b></td>
+                               <td align="center" width="30%">--05:40 Hrs.--</td>
+                               <td align="right" width="35%"><b>16:35</b><br>KALKA<br><b>KLK</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>72452</b>&nbsp;&nbsp;SML-KLK MEX</span><br><span style="padding-left: 10px;">Daily | DMU</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>12:00</b><br>SHIMLA<br><b>SML</b></td>
+                               <td align="center" width="30%">--05:00 Hrs.--</td>
+                               <td align="right" width="35%"><b>17:00</b><br>KALKA<br><b>KLK</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>14:15</b><br>SHIMLA<br><b>SML</b></td>
+                               <td align="center" width="30%">--05:55 Hrs.--</td>
+                               <td align="right" width="35%"><b>20:10</b><br>KALKA<br><b>KLK</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52460</b>&nbsp;&nbsp;SML-KLK MEX</span><br><span style="padding-left: 10px;">Daily | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>15:50</b><br>SHIMLA<br><b>SML</b></td>
+                               <td align="center" width="30%">--05:00 Hrs.--</td>
+                               <td align="right" width="35%"><b>20:50</b><br>KALKA<br><b>KLK</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52452</b>&nbsp;&nbsp;KLK-SML SHIVALIK DELUX</span><br><span style="padding-left: 10px;">Daily | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>18:05</b><br>SHIMLA<br><b>SML</b></td>
+                               <td align="center" width="30%">--04:35 Hrs.--</td>
+                               <td align="right" width="35%"><b>22:40</b><br>KALKA<br><b>KLK</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr>
+                
+                   
+                   <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>52454</b>&nbsp;&nbsp;SML-KLK MAIL</span><br><span style="padding-left: 10px;">Daily | Passenger</span>
+                       <table style="width: 100%;margin: 0px;">
+                           <tbody><tr style="padding: 0px;">
+                               <td width="35%"><b>18:45</b><br>SHIMLA<br><b>SML</b></td>
+                               <td align="center" width="30%">--05:00 Hrs.--</td>
+                               <td align="right" width="35%"><b>23:45</b><br>KALKA<br><b>KLK</b>
+                               </td>
+                           </tr>
+                       </tbody></table>
+                   </td>
+                   </tr> `,
+                   5: `<table class="table table-condensed " style="background: #eee;padding:;">
+                    <thead>
+                    <tr><td colspan="9" align="left"><font size="2" color="#006AD5" face="verdana">8 Heritage Trains of Nilgiri Mountain Railway</font></td></tr>
+                    </thead>
+                        <tbody>
+                           <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                           <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>06136</b>&nbsp;&nbsp;MTP UAM PASS SPL</span><br><span style="padding-left: 10px;">Daily | Passenger Special</span>
+                               <table style="width: 100%;margin: 0px;">
+                                   <tbody><tr style="padding: 0px;">
+                                       <td width="35%"><b>07:10</b><br>METUPALAIYAM<br><b>MTP</b></td>
+                                       <td align="center" width="30%">--04:45 Hrs.--</td>
+                                       <td align="right" width="35%"><b>11:55</b><br>UDAGAMANDALAM<br><b>UAM</b>
+                                       </td>
+                                   </tr>
+                               </tbody></table>
+                           </td>
+                           </tr>
+                        
+                           
+                           <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                           <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>06137</b>&nbsp;&nbsp;UAM MTP PASS SPL</span><br><span style="padding-left: 10px;">Daily | Passenger Special</span>
+                               <table style="width: 100%;margin: 0px;">
+                                   <tbody><tr style="padding: 0px;">
+                                       <td width="35%"><b>14:00</b><br>UDAGAMANDALAM<br><b>UAM</b></td>
+                                       <td align="center" width="30%">--03:30 Hrs.--</td>
+                                       <td align="right" width="35%"><b>17:30</b><br>METUPALAIYAM<br><b>MTP</b>
+                                       </td>
+                                   </tr>
+                               </tbody></table>
+                           </td>
+                           </tr>
+                        
+                           
+                           <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                           <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>06141</b>&nbsp;&nbsp;ONR-UAM PASS SPL</span><br><span style="padding-left: 10px;">Daily | Passenger Special</span>
+                               <table style="width: 100%;margin: 0px;">
+                                   <tbody><tr style="padding: 0px;">
+                                       <td width="35%"><b>07:45</b><br>COONOOR<br><b>ONR</b></td>
+                                       <td align="center" width="30%">--01:15 Hrs.--</td>
+                                       <td align="right" width="35%"><b>09:00</b><br>UDAGAMANDALAM<br><b>UAM</b>
+                                       </td>
+                                   </tr>
+                               </tbody></table>
+                           </td>
+                           </tr>
+                        
+                           
+                           <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                           <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>06143</b>&nbsp;&nbsp;ONR-UAM PASS SPL</span><br><span style="padding-left: 10px;">Daily | Passenger Special</span>
+                               <table style="width: 100%;margin: 0px;">
+                                   <tbody><tr style="padding: 0px;">
+                                       <td width="35%"><b>12:35</b><br>COONOOR<br><b>ONR</b></td>
+                                       <td align="center" width="30%">--01:10 Hrs.--</td>
+                                       <td align="right" width="35%"><b>13:45</b><br>UDAGAMANDALAM<br><b>UAM</b>
+                                       </td>
+                                   </tr>
+                               </tbody></table>
+                           </td>
+                           </tr>
+                        
+                           
+                           <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                           <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>06138</b>&nbsp;&nbsp;ONR UAM PASS SPL</span><br><span style="padding-left: 10px;">Daily | Passenger Special</span>
+                               <table style="width: 100%;margin: 0px;">
+                                   <tbody><tr style="padding: 0px;">
+                                       <td width="35%"><b>16:00</b><br>COONOOR<br><b>ONR</b></td>
+                                       <td align="center" width="30%">--01:10 Hrs.--</td>
+                                       <td align="right" width="35%"><b>17:10</b><br>UDAGAMANDALAM<br><b>UAM</b>
+                                       </td>
+                                   </tr>
+                               </tbody></table>
+                           </td>
+                           </tr>
+                        
+                           
+                           <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                           <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>06139</b>&nbsp;&nbsp;UAM ONR PASS SPL</span><br><span style="padding-left: 10px;">Daily | Passenger Special</span>
+                               <table style="width: 100%;margin: 0px;">
+                                   <tbody><tr style="padding: 0px;">
+                                       <td width="35%"><b>09:15</b><br>UDAGAMANDALAM<br><b>UAM</b></td>
+                                       <td align="center" width="30%">--01:05 Hrs.--</td>
+                                       <td align="right" width="35%"><b>10:20</b><br>COONOOR<br><b>ONR</b>
+                                       </td>
+                                   </tr>
+                               </tbody></table>
+                           </td>
+                           </tr>
+                        
+                           
+                           <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                           <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>06142</b>&nbsp;&nbsp;UAM-ONR PASS  APL</span><br><span style="padding-left: 10px;">Daily | Passenger Special</span>
+                               <table style="width: 100%;margin: 0px;">
+                                   <tbody><tr style="padding: 0px;">
+                                       <td width="35%"><b>12:15</b><br>UDAGAMANDALAM<br><b>UAM</b></td>
+                                       <td align="center" width="30%">--01:00 Hrs.--</td>
+                                       <td align="right" width="35%"><b>13:15</b><br>COONOOR<br><b>ONR</b>
+                                       </td>
+                                   </tr>
+                               </tbody></table>
+                           </td>
+                           </tr>
+                        
+                           
+                           <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                           <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>06140</b>&nbsp;&nbsp;UAM ONR PASS SPL</span><br><span style="padding-left: 10px;">Daily | Passenger Special</span>
+                               <table style="width: 100%;margin: 0px;">
+                                   <tbody><tr style="padding: 0px;">
+                                       <td width="35%"><b>17:30</b><br>UDAGAMANDALAM<br><b>UAM</b></td>
+                                       <td align="center" width="30%">--01:05 Hrs.--</td>
+                                       <td align="right" width="35%"><b>18:35</b><br>COONOOR<br><b>ONR</b>
+                                       </td>
+                                   </tr>
+                               </tbody></table>
+                           </td>
+                           </tr>`,
+                           4: `    <table class="table table-condensed " style="background: #eee;padding:;">
+                            <thead>
+                            <tr><td colspan="9" align="left"><font size="2" color="#006AD5" face="verdana">1 Heritage Train of Kangra Valley Railway</font></td></tr>
+                            </thead>
+                                <tbody>
+                             <tr class=" w3-round  w3-white" style="margin-left: 5dp;margin-right: 5dp;">
+                                   <td colspan="3" style="border-radius: 25px 25px 25px 25px;margin-top: 20px;padding-bottom: 0px;border-bottom:10px solid #eee;"><span style="padding-left: 10px;"><b>01607</b>&nbsp;&nbsp;PTK-JDNX SPL</span><br><span style="padding-left: 10px;">Daily | Passenger Special</span>
+                                  
+                                       <table style="width: 100%;margin: 0px;">
+                                           <tbody><tr style="padding: 0px;">
+                                               <td width="35%"><b>02:05</b><br>PATHANKOT<br><b>PTK</b></td>
+                                               <td align="center" width="30%">--08:55 Hrs.--</td>
+                                               <td align="right" width="35%"><b>11:00</b><br>JOGINDER NAGAR<br><b>JDNX</b>
+                                               </td>
+                                           </tr>
+                                       </tbody></table>
+                                   </td>`,
+                                   3: `<table class="table table-condensed " style="background: #eee;padding:;">
+                                    <thead>
+                                    <tr><td colspan="9" align="left"><font size="2" color="#006AD5" face="verdana">No Heritage Trains of Matheran Hill Railway</font></td></tr>
+                                    </thead>`,
+                                
+        // Add data for other trains
+    };
+
+    trainSelect.addEventListener("change", function() {
+        const selectedTrain = trainSelect.value;
+        tableBody.innerHTML = trainData[selectedTrain];
+    });
+
+    // Set the default train to "0"
+    tableBody.innerHTML = trainData["1"];
+});
+</script>
+
+
+
+</body>
+</html>
+<style>table#dataTable {
+    width: 100%;}
+    select#trainSelect {
+        width: 100%;
+        padding: 5px;margin-bottom: 40px;}
+        font {
+            color: #2196f3!important;}u {
+                margin-left: 450px;}</style>
+
+    </div>
+    {% endblock body %}

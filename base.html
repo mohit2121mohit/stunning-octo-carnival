@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>{%block title%}{% endblock title%}|Railway Enquiry System</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="http://127.0.0.1:8000/">Railway Enquiry System</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="http://127.0.0.1:8000/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/live-train-status">Live Train Status</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/train-between-stations">Train Between Stations</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/pnr-status">PNR Status</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/train-by-station">Train by Station</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/train-schedule">Train Schedule</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/heritage-trains">Heritage Trains</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    {% block body %}{% endblock %}
+</div>
+
+<footer class="text-white text-center bg-dark py-3">
+    <!-- Copyright -->
+    <div class="text-center">
+        © 2024 Copyright:
+        <a class="text-white" href="http://127.0.0.1:8000/">Railway Enquiry System</a>
+    </div>
+    <!-- Copyright -->
+</footer>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
+
+  <style>.card-img-top{padding:10px}
+    
+    .navbar{background-color: #2196f3!important;}
+    
+    .nav-link {
+    color: white!important; margin-right: 15px; font-family: sans-serif;}
+    
+    a.nav-link:hover {
+      color: #2196f3!important;background:white!important;font-weight: 600;border-radius: 10px
+  }
+  
+  .navbar-brand {
+    font-size: 25px;
+    color: #fff000!important;
+    font-family: cursive;
+    -webkit-text-stroke: 0.3px white!important;margin-right: 50px;}
+
+    .btn-outline-primary {
+      color: #000000;
+      border-color: #000000;
+      font-size: 15px!important;    margin-top: 10px;
+    }
+      
+      a.btn.btn-outline-primary.btn-sm:hover {
+        background: #2196f3!important;
+        border: 1px solid #2196f3!important;}
+        .card-img-top {
+          width: 100%;
+          border-bottom: 1px solid #dfdfdf;}
+          hr {
+            border: none;
+            margin: 0px;
+        }
+        #clearButton{margin-top: 4px;}
+        .bg-dark{
+          background: #2196f3!important;}
+    #header{background:#2196f3 !important}
+  </style>
+  </body>
+</html>
+
+
+
+ 
+  
