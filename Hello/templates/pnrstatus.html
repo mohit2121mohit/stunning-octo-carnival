@@ -1,0 +1,296 @@
+
+{%extends 'base.html'%}
+{% block title %}PNR Status{%endblock title%}
+{%block body%}
+<div class="container my-4">
+    <br><br>
+    <h2><u><b>PNR Status</b></u></h2>
+    <br><br> 
+    <table class="table table-condensed ">	
+        <tbody><tr height="24">
+        <td align="left" style="border:none;">
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Suggestion Input Bar</title>
+                <link rel="stylesheet" href="styles.css">
+            </head>
+            <body>
+                <h5>Enter PNR No.<font color="red">*</font></h5>
+                
+                <div id="inputContainer">
+                    <input type="text" id="suggestionInput" placeholder="PNR No.">
+                    <button id="clearButton">&#10005;</button>
+                </div>
+                <ul id="suggestionList"></ul>
+                <script src="suggestions.js"></script>
+            </body>
+            </html>
+    <script>// suggestions.js
+        const suggestions = [
+    
+    
+];
+
+const suggestionInput = document.getElementById("suggestionInput");
+const suggestionList = document.getElementById("suggestionList");
+const clearButton = document.getElementById("clearButton");
+
+let activeSuggestionIndex = -1;
+
+suggestionInput.addEventListener("input", function() {
+    const inputText = suggestionInput.value.toLowerCase();
+
+    suggestionList.innerHTML = ""; // Clear the suggestions
+
+    if (inputText === "") {
+        return;
+    }
+
+    const matchedSuggestions = suggestions.filter(suggestion => {
+        const suggestionLowerCase = suggestion.toLowerCase();
+        return suggestionLowerCase.indexOf(inputText) === 0; // Match from the start
+    });
+
+    suggestionList.addEventListener("mouseleave", function() {
+        const hoveredSuggestion = suggestionList.querySelector(".hovered");
+        if (hoveredSuggestion) {
+            hoveredSuggestion.classList.remove("hovered");
+        }
+    });
+
+    matchedSuggestions.forEach((suggestion, index) => {
+        const li = document.createElement("li");
+        li.textContent = suggestion;
+        suggestionList.appendChild(li);
+
+        li.addEventListener("click", function() {
+            suggestionInput.value = suggestion;
+            suggestionList.innerHTML = "";
+        });
+
+        li.addEventListener("mouseenter", function() {
+            setActiveSuggestion(index);
+        });
+
+        li.addEventListener("mouseleave", function() {
+            removeHoveredSuggestion(index);
+        });
+    });
+
+    if (matchedSuggestions.length === 1) {
+        setActiveSuggestion(0); // Set the only suggestion as hovered
+    } else {
+        setActiveSuggestion(-1); // Clear any active suggestion
+    }
+
+    activeSuggestionIndex = -1;
+});
+
+clearButton.addEventListener("click", function() {
+    suggestionInput.value = "";
+    suggestionList.innerHTML = "";
+});
+
+suggestionInput.addEventListener("keydown", function(event) {
+    if (event.key === "ArrowDown") {
+        event.preventDefault();
+        navigateSuggestions(1);
+    } else if (event.key === "ArrowUp") {
+        event.preventDefault();
+        navigateSuggestions(-1);
+    } else if (event.key === "Enter") {
+        event.preventDefault();
+        selectActiveSuggestion();
+    }
+});
+
+function removeHoveredSuggestion(index) {
+    const suggestionItems = suggestionList.querySelectorAll("li");
+    suggestionItems[index].classList.remove("hovered");
+}
+
+function navigateSuggestions(direction) {
+    const suggestionItems = suggestionList.querySelectorAll("li");
+    if (suggestionItems.length === 0) return;
+
+    if (activeSuggestionIndex >= 0 && activeSuggestionIndex < suggestionItems.length) {
+        suggestionItems[activeSuggestionIndex].classList.remove("hovered");
+    }
+
+    activeSuggestionIndex += direction;
+    if (activeSuggestionIndex < 0) {
+        activeSuggestionIndex = suggestionItems.length - 1;
+    } else if (activeSuggestionIndex >= suggestionItems.length) {
+        activeSuggestionIndex = 0;
+    }
+
+    if (activeSuggestionIndex >= 0 && activeSuggestionIndex < suggestionItems.length) {
+        suggestionItems[activeSuggestionIndex].classList.add("hovered");
+    }
+}
+
+function setActiveSuggestion(index) {
+    const suggestionItems = suggestionList.querySelectorAll("li");
+    suggestionItems.forEach(item => {
+        item.classList.remove("hovered");
+    });
+
+    if (index >= 0 && index < suggestionItems.length) {
+        suggestionItems[index].classList.add("hovered");
+    }
+}
+
+function selectActiveSuggestion() {
+    const activeSuggestion = suggestionList.querySelector(".hovered");
+    if (activeSuggestion) {
+        suggestionInput.value = activeSuggestion.textContent;
+        suggestionList.innerHTML = "";
+    }
+}
+
+suggestionList.addEventListener("click", function(event) {
+    const clickedSuggestion = event.target;
+    if (clickedSuggestion.tagName === "LI") {
+        suggestionInput.value = clickedSuggestion.textContent;
+        suggestionList.innerHTML = "";
+    }
+});
+       
+</script>    
+       
+        <tr height="20" class="active">
+            <td nowrap="" align="center" style="font-family:Calibri;font-size:8pt;color:#0000FF; border: none;">
+            <div class="input-group">
+                &nbsp;<input class="btn btn-primary" type="button" name="find" value="Submit" onclick="onTBS();">
+                </div>
+            </td>				       
+        </tr>
+        
+    </tbody></table>
+    <style>
+        .form-control{border-radius:0px;
+            border: 1px solid #000000
+
+        }        
+        body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        text-align: center;
+    }
+    
+    h1 {
+        margin-bottom: 20px;
+    }
+    
+    #suggestionInput {
+        width: 100%;
+        padding: 8px;
+        font-size: 16px;
+    }
+    
+    #suggestionList {
+        list-style: none;
+        padding: 0;
+        margin-top: 10px;
+    }
+    
+    #suggestionList li {
+        padding: 5px;
+        cursor: pointer;
+    
+    }
+    
+    #clearButton {
+   font-size: 20px;
+    border: 1px solid;
+    cursor: pointer;
+    position: absolute;
+    margin-left: 10px;
+    color: black;
+    background:none;
+    }
+    #clearButton:hover {
+        background: #2196f3;
+        color: white;
+        font-weight: 600;
+        border: 1px solid #2196f3;}
+        
+        .btn-primary {
+            color: #000;
+            background-color: #ffffff;
+            border: 1px solid#000000;
+            font-size: 18px;
+        }
+        input.btn.btn-default {
+            border: 1px solid;
+            font-size: 18px;
+        color:black}
+            
+            input.btn.btn-default:hover {
+                color: white!important;
+            background-color: #2196f3 !important;
+            border: 1px solid#2196f3!important;}
+
+        .btn-primary:hover {
+            color: white!important;
+            background-color: #2196f3 !important;
+            border: 1px solid#2196f3!important;}
+            #suggestionList li {
+                padding: 5px;
+                cursor: pointer;
+                border-top: 1px solid #ffffff;
+                background: #f1f4f7;
+                border-left: 1px solid;
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+            }
+                #suggestionList li:hover {
+                    background-color: #2196f3;
+                    color: white;
+                    border: 1px solid #2196f3;}
+                    
+                    li.hovered {
+                        background-color: #2196f3;
+                        cursor: pointer;
+                    }
+                    #suggestionList li.hovered {background-color: #2196f3;
+                        color: white;
+                        border: 1px solid #2196f3;
+                        cursor: pointer;}
+
+
+    
+    #suggestionList {
+        list-style: none;
+        padding: 0;
+        margin-top: 10px;
+    }
+    
+    #suggestionList li {
+        padding: 5px;
+        cursor: pointer;
+    
+    }
+    
+    #clearButton {
+   font-size: 20px;
+    border: 1px solid;
+    cursor: pointer;
+    position: absolute;
+    margin-left: 10px;
+    color: black;
+    background:none;
+    }
+    #clearButton:hover {
+        background: #2196f3;
+        color: white;
+        font-weight: 600;
+        border: 1px solid #2196f3;}
+    </style> 
+</div>
+<br><br><br><br><br><br><br>
+
+    {% endblock body%}
